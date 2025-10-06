@@ -1,79 +1,91 @@
 import customtkinter as ctk
-from PIL import Image
+from PIL import Image, ImageTk
 import variaveis as var
 from janelas import *
 
 class JogoDaVida(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.geometry('1350x800')
+        self.geometry(f'{var.WIN_LARGURA}x{var.WIN_ALTURA}')
         self.title('Jogo da Vida')
         self.resizable(False,False)
 
-        #questão atual --> no começo do jogo
+        #Questão atual --> no começo do jogo
         self.questao_atual = '1'    
 
-        #Tela de fundo - label    
-        background_img = ctk.CTkImage(Image.open(var.caminho_bg_img),size=(1350,800))
-        background_lbl = ctk.CTkLabel(self, text='', image=background_img)
-        background_lbl.place(x=0, y=0)
+        #Imagem background 
+        self.background_img = Image.open(var.caminho_bg_img).resize((var.WIN_LARGURA,var.WIN_ALTURA))
+        self.background_photo = ImageTk.PhotoImage(self.background_img)
 
-        #Display do texto da questão
-        self.questao_label = Label(self,bg='black',font=('consolas',28),text='') 
+        #Cria canvas 
+        self.canvas = ctk.CTkCanvas(self, width=var.WIN_LARGURA, height=var.WIN_ALTURA, highlightthickness=0)
+        self.canvas.pack(fill="both", expand=True)
+        self.canvas.create_image(0,0,image=self.background_photo,anchor='nw')
 
         #Criação da imagem do personagem
-        imagem_personagem = ctk.CTkImage(Image.open(var.caminho_person_img),size=(200,300))
-        imagem_label = ctk.CTkLabel(self,image=imagem_personagem,text='')
-        imagem_label.pack(pady=60)
+        self.personagem_img = Image.open(var.caminho_person_img).resize((150,200))
+        self.personagem_photo = ImageTk.PhotoImage(self.personagem_img)
+        self.canvas.create_image(var.WIN_LARGURA/2, 340, image=self.personagem_photo)
 
-        #Frame dos butões de pergunta / Utiliza metódo de layout diferente (grid)
-        self.botao_frame = BotaoFrame(self,larg=1000,alt=300)
+        #Imagem do balao de pergunta
+        self.balao_img = Image.open(var.caminho_balao_perg).resize((1500,400))
+        self.balao_photo = ImageTk.PhotoImage(self.balao_img)
+        self.canvas.create_image(var.WIN_LARGURA/2, 90, image=self.balao_photo)
 
-        self.botao_lista = []
+        #Display do texto da questão
+        self.canvas.create_text(var.WIN_LARGURA/2,55,font=('consolas',20),text='',tags='texto_questao') 
+
+        #Imagem do botao
+        self.botao_img = Image.open(var.caminho_botao_img).resize((470,230))
+        self.botao_photo = ImageTk.PhotoImage(self.botao_img)
 
         self.update_interface()
         
     def update_interface(self):
         '''Atualiza a interface com os textos das perguntas e das repostas a partir da questão atual'''
-        print(self.questao_atual)
 
-        #se não tiver mais questões o jogo acaba
+        #Se não tiver mais questões o jogo acaba
         if self.questao_atual is None:
             print('Acabou')
             return
 
-        #dados referentes a questão atual
+        #Dados referentes a questão atual
         self.dados_questao = var.dados['perguntas'][self.questao_atual]
 
         #Definir texto da questao
-        self.questao_label.configure(text=self.dados_questao['texto'])
+        self.canvas.itemconfig('texto_questao', text=self.dados_questao['texto'])
 
-        #Criar os botoes das respostas
-        respostas = list(self.dados_questao['respostas'].keys())
-        self.criar_botoes(respostas)   #resposta é uma lista com os textos das repostas e vai ser passada como uma chave porque cada texto é a chave do dicionario de respostas.
+        #Armazena os textos das respostas
+        respostas = list(self.dados_questao['respostas'].keys())  #resposta é uma lista com os textos das repostas e vai ser passada como uma chave porque cada texto é a chave do dicionario de respostas.
 
-        #Definir texto dos botões
-        for i, texto_repostas in enumerate(respostas):
-            self.botao_lista[i].configure(text=texto_repostas)
+        self.criar_botao_img(respostas)  #Chama a função que cria os botões
+        for i in range(3):    
+            #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
+            self.canvas.tag_bind(f"botao{i}", "<Button-1>", lambda event: self.clicar_botao(respostas[i]))
 
 
-    def criar_botoes(self,chave):
-        '''Criar lista com os botões de reposta para facilitar o acesso futuro'''
-        #Apaga botões antigos se tiver
-        for btn in self.botao_lista:
-            btn.destroy()
+    def criar_botao_img(self,chave):
+        ''' Cria a imagem e o texto dos botões no canvas a partir das funções create_image/create_text'''
 
-        self.botao_lista = []
-        for i in range(3):  #cria os três botoes
-            btn = Botao(self.botao_frame, fg='green', font=('consolas', 20), text='', func=self.clicar_botao, col=i, chave=chave[i]) #ao passar o texto como chave, a função clicar_botao terá acesso aos atributos referentes ao botao clicado.
-            self.botao_lista.append(btn)
+        mult_x_coord = [1,3,5]
+        for i, mult in enumerate(mult_x_coord):
+            #cria e posiciona cada imagem e texto do botao e associa cada um a uma tag correspondente
+            self.canvas.create_image(var.WIN_LARGURA/6*mult,630, image=self.botao_photo,tags=f'botao{i}')
+            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('consolas',15),tags=f'botao{i}')
+
 
     def clicar_botao(self,chave):
+        '''Atualiza a questão atual e deleta os botões antigos'''
         #chave corresponde ao texto da resposta 
         self.questao_atual = self.dados_questao['respostas'][chave]['prox_q']
+
+        #deleta os botões
+        for i in range(3):
+            self.canvas.delete(f'botao{i}')
 
         self.update_interface()
         
 if __name__ == '__main__':
     jogo = JogoDaVida()
     jogo.mainloop()
+

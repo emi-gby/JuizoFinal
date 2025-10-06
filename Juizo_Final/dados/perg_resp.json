@@ -4,7 +4,7 @@
       "texto": "Você está fazendo um trabalho em grupo\n e um colega não fez a parte dele, faltando poucas horas para o prazo final.",
       "respostas": {
         "Fazer a parte dele às \npressas, sem dizer nada,\n e sentir muita\n raiva por dentro.": { "lv": 0, "hp": -3, "prox_q": "2" },
-        "Ligar para o colega,\n dizer de forma calma e\n firme que ele precisa \nterminar a parte dele agora\n e oferecer ajuda para o\n que for necessário.": { "lv": 2, "hp": 1, "prox_q": "2" },
+        "Ligar para o colega, dizer\n de forma calma e firme que\n ele precisa terminar a parte\n dele agora e oferecer\n ajuda para o que for\n necessário.": { "lv": 2, "hp": 1, "prox_q": "2" },
         "Mandar uma mensagem agressiva\n no grupo, dizendo que ele\n é irresponsável e ameaçando\n tirá-lo do trabalho.": { "lv": 1, "hp": -2, "prox_q": "2" }
       }
     },
