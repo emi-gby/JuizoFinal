@@ -1,6 +1,6 @@
 {
   "perguntas": {
-    "1": {
+    "escola": {"1": {
       "texto": "Você está fazendo um trabalho em grupo\n e um colega não fez a parte dele, faltando poucas horas para o prazo final.",
       "respostas": {
         "Fazer a parte dele às \npressas, sem dizer nada,\n e sentir muita\n raiva por dentro.": { "lv": 0, "hp": -3, "prox_q": "2" },
@@ -35,12 +35,15 @@
     "5": {
       "texto": "Você percebe que um colega está mais calado e \nisolado nos últimos dias.",
       "respostas": {
-        "Ignorar a situação, pois\n isso não é problema seu.": { "lv": -2, "hp": -2, "prox_q": "6" },
-        "Chamar esse colega para um\n café e perguntar se ele\n está bem, oferecendo apoio.": { "lv": 2, "hp": 2, "prox_q": "6" },
-        "Comentar com os outros \nsobre o comportamento dele,\n fazendo piadas.": { "lv": -1, "hp": -3, "prox_q": "6" }
+        "Ignorar a situação, pois\n isso não é problema seu.": { "lv": -2, "hp": -2, "prox_q": null },
+        "Chamar esse colega para um\n café e perguntar se ele\n está bem, oferecendo apoio.": { "lv": 2, "hp": 2, "prox_q": null },
+        "Comentar com os outros \nsobre o comportamento dele,\n fazendo piadas.": { "lv": -1, "hp": -3, "prox_q": null }
       }
-    },
-    "6": {
+    }
+  },
+
+
+    "faculdade" : {"1": {
       "texto": "Durante uma discussão em equipe, duas pessoas começam \na se exaltar e o clima fica tenso.",
       "respostas": {
         "Intervir com calma, \nsugerindo uma pausa para \nque todos possam se acalmar\n e retomar depois.": { "lv": 2, "hp": 1, "prox_q": "7" },
@@ -67,12 +70,15 @@
     "9": {
       "texto": "Você está com uma carga alta de trabalho e um colega pede ajuda\n com uma tarefa urgente.",
       "respostas": {
-        "Negar ajuda sem explicação,\n dizendo que está ocupado.": { "lv": -1, "hp": -1, "prox_q": "10" },
-        "Avaliar seu tempo, explicar\n sua situação e tentar ajudar\n com o que for possível.": { "lv": 2, "hp": 1, "prox_q": "10" },
-        "Assumir a tarefa mesmo \nsem tempo, acumulando ainda\n mais trabalho e ficando\n sobrecarregado.": { "lv": 0, "hp": -2, "prox_q": "10" }
+        "Negar ajuda sem explicação,\n dizendo que está ocupado.": { "lv": -1, "hp": -1, "prox_q": null },
+        "Avaliar seu tempo, explicar\n sua situação e tentar ajudar\n com o que for possível.": { "lv": 2, "hp": 1, "prox_q": null },
+        "Assumir a tarefa mesmo \nsem tempo, acumulando ainda\n mais trabalho e ficando\n sobrecarregado.": { "lv": 0, "hp": -2, "prox_q": null }
       }
-    },
-    "10": {
+    }
+  },
+
+
+    "trabalho":{"1": {
       "texto": "Você cometeu um erro que afetou o andamento de\n um projeto importante.",
       "respostas": {
         "Assumir o erro, avisar a \nequipe e buscar soluções \npara corrigir o problema.": { "lv": 2, "hp": 1, "prox_q": "11" },
@@ -99,12 +105,15 @@
     "13": {
       "texto": "Durante uma atividade em grupo, dois colegas discordam fortemente e \na discussão começa a prejudicar o andamento.",
       "respostas": {
-        "Ouvir os dois lados com \natenção e tentar mediar o \nconflito com imparcialidade.": { "lv": 2, "hp": 1, "prox_q": "14" },
-        "Escolher um lado e apoiar\n abertamente, sem ouvir o outro.": { "lv": -1, "hp": -2, "prox_q": "14" },
-        "Sair do grupo para não \nse envolver.": { "lv": -2, "hp": -1, "prox_q": "14" }
+        "Ouvir os dois lados com \natenção e tentar mediar o \nconflito com imparcialidade.": { "lv": 2, "hp": 1, "prox_q": null },
+        "Escolher um lado e apoiar\n abertamente, sem ouvir o outro.": { "lv": -1, "hp": -2, "prox_q": null },
+        "Sair do grupo para não \nse envolver.": { "lv": -2, "hp": -1, "prox_q": null }
       }
-    },
-    "14": {
+    }
+  },
+
+
+    "familia":{"1": {
       "texto": "Você está em um ambiente com pessoas de diferentes culturas \ne formas de pensar.",
       "respostas": {
         "Demonstrar abertura, ouvir as \nperspectivas diferentes e \nbuscar aprender com elas.": { "lv": 2, "hp": 2, "prox_q": "15" },
@@ -123,18 +132,11 @@
     "16": {
       "texto": "Durante uma discussão acalorada, você percebe que está\n começando a ficar irritado.",
       "respostas": {
-        "Respirar fundo, se controlar e\n tentar manter o tom calmo.": { "lv": 2, "hp": 1, "prox_q": "17" },
-        "Levantar a voz e falar sem\n pensar nas consequências.": { "lv": -2, "hp": -2, "prox_q": "17" },
-        "Sair da conversa abruptamente\n sem explicar nada.": { "lv": -1, "hp": -1, "prox_q": "17" }
-      }
-    },
-    "17": {
-      "texto": "Você recebeu um feedback construtivo, mas não concorda\n totalmente com ele.",
-      "respostas": {
-        "Agradecer pelo feedback,\n refletir com calma e depois\n conversar para esclarecer\n seus pontos.": { "lv": 2, "hp": 1, "prox_q": null },
-        "Rebater o feedback na hora,\n dizendo que está errado.": { "lv": -1, "hp": -2, "prox_q": null },
-        "Ignorar completamente o \nfeedback e continuar agindo\n como antes.": { "lv": -2, "hp": -2, "prox_q": null }
+        "Respirar fundo, se controlar e\n tentar manter o tom calmo.": { "lv": 2, "hp": 1, "prox_q": null },
+        "Levantar a voz e falar sem\n pensar nas consequências.": { "lv": -2, "hp": -2, "prox_q": null },
+        "Sair da conversa abruptamente\n sem explicar nada.": { "lv": -1, "hp": -1, "prox_q": null }
       }
     }
+   }
   }
 }
