@@ -45,8 +45,7 @@ class Init_Jogo(ctk.CTk):
         self.canvas.create_image(1010, 130, image=self.faculdade_photo, tags='faculdade')
         self.canvas.tag_bind(f"faculdade", "<Button-1>", lambda event: self.chamar_fase('faculdade'))
 
-
-        self.jogo_fase = None   #é necessario????
+        self.jogo_fase = None 
 
     def chamar_fase(self,fase):
         if self.jogo_fase is not None:
@@ -118,7 +117,7 @@ class JogoDaVida(ctk.CTkToplevel):
             self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('consolas',15),tags=f'botao{i}')
             
         #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
-        self.canvas.tag_bind(f"botao{0}", "<Button-1>", lambda event: self.clicar_botao(chave[0]))  #####?????
+        self.canvas.tag_bind(f"botao{0}", "<Button-1>", lambda event: self.clicar_botao(chave[0]))  
         self.canvas.tag_bind(f"botao{1}", "<Button-1>", lambda event: self.clicar_botao(chave[1]))
         self.canvas.tag_bind(f"botao{2}", "<Button-1>", lambda event: self.clicar_botao(chave[2]))
 
