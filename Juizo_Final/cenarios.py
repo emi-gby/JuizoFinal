@@ -1,16 +1,16 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
 import variaveis as var
-from janelas import *
 
 class JogoDaVida(ctk.CTkToplevel):
-    def __init__(self,master,fase,karma):
+    def __init__(self,master,fase):
         super().__init__(master)
         self.geometry(f'{var.WIN_LARGURA}x{var.WIN_ALTURA}')
         self.title(f'{fase.capitalize()}')
         self.resizable(False,False)
         self.fase_atual = fase
-        self.karma = karma
+        self.karma = 0
+        self.master = master
         var.pegar_imagem(fase)
 
         #Questão atual --> no começo do jogo
@@ -41,6 +41,17 @@ class JogoDaVida(ctk.CTkToplevel):
         self.karma_img = Image.open(var.caminho_karma_img).resize((70,70))
         self.karma_photo = ImageTk.PhotoImage(self.karma_img)
 
+        #Imagem Anjo
+        self.anjo_img = Image.open(var.caminho_anjo_img).resize((80,80))
+        self.anjo_photo = ImageTk.PhotoImage(self.anjo_img)
+
+        #Imagem Demonio
+        self.demonio_img = Image.open(var.caminho_demonio_img).resize((80,80))
+        self.demonio_photo = ImageTk.PhotoImage(self.demonio_img)
+
+        #tira o bind da fase já jogada
+        self.master.canvas.tag_unbind(f'{self.fase_atual}', "<Button-1>")
+
         self.update_interface()
         
     def update_interface(self):
@@ -49,7 +60,9 @@ class JogoDaVida(ctk.CTkToplevel):
         #Se não tiver mais questões o jogo acaba
         if self.questao_atual is None:
             self.destroy()
-            return
+            #passa o valor relativo do karma da respectiva fase para a função da classe inicial
+            self.master.calcular_karma(self.karma, self.fase_atual)
+            return 
 
         #Dados referentes a questão atual
         self.dados_questao = var.dados['perguntas'][self.fase_atual][self.questao_atual]
@@ -89,19 +102,22 @@ class JogoDaVida(ctk.CTkToplevel):
         self.after(1000,lambda: self.processar_clique(chave))
 
     def mostrar_karma(self, valor):
-        '''Animação da mudança do karma'''
+        '''Animação da mudança e cálculo do karma'''
 
-        #adiciona sinal de mais no inicial se valor for mais ou igual a 0
+        self.karma += valor  #adiciona ao karma total o valor
+        #adiciona sinal de mais no inicial se valor for maior ou igual a 0
         text = f"+{valor}" if valor >= 0 else f"{valor}"
+        #utiliza imagens diferentes de acordo com o valor
+        imagem_karma = self.anjo_photo if valor > 0 else self.karma_photo if valor == 0 else self.demonio_photo
 
         #cria texto e imagens referentes ao karma
         self.canvas.create_text(
             1100, 250, text=text,
             font=('consolas', 70, 'bold'),
-            fill="#66DF66" if valor > 0 else "#F0E9E9" if valor == 0 else "#CA2323",
+            fill="#66DF66" if valor > 0 else "#7A6E6E" if valor == 0 else "#CA2323",
             anchor='center',tags='karma'
         )
-        self.canvas.create_image(1195,250,image=self.karma_photo, tags='karma')
+        self.canvas.create_image(1195,250,image=imagem_karma, tags='karma')
 
         # parametros para a animação
         duracao = 1000  # duração total da animação

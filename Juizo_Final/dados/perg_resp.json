@@ -11,33 +11,9 @@
     "2": {
       "texto": "Seus companheiros de equipe estão desorientados\n e não têm noção do que fazer no projeto.",
       "respostas": {
-        "Se desesperar e não procurar\n uma solução plausível.": { "lv": 2, "hp": -2, "prox_q": "3" },
-        "Ignorar o time e esperar\n pelo que for decidido\n por todos.": { "lv": -1, "hp": -1, "prox_q": "3" },
-        "Liderar e orientar o time.": { "lv": 0, "hp": -2, "prox_q": "3" }
-      }
-    },
-    "3": {
-      "texto": "Sua gerente chega à reunião muito abalada e acaba se perdendo\n algumas vezes em seu discurso, que você sabe complementar.",
-      "respostas": {
-        "Falar no meio da reunião\n que o discurso está\n péssimo e tomar a frente.": { "lv": 2, "hp": -2, "prox_q": "4" },
-        "Auxiliar às vezes,\n mas interrompendo a fala\n sem aviso ou sinal de\n confusão da gerente.": { "lv": -1, "hp": -1, "prox_q": "4" },
-        "Auxiliar somente quando\n a gerente demonstrar confusão\n e após a reunião \nse disponibilizar \npara um diálogo amigável.": { "lv": 0, "hp": 0, "prox_q": "4" }
-      }
-    },
-    "4": {
-      "texto": "Um colega de trabalho sempre interrompe você durante as reuniões,\n mesmo quando você está apresentando algo importante.",
-      "respostas": {
-        "Ignorar as interrupções e\n deixar de se manifestar\n nas reuniões futuras.": { "lv": -1, "hp": -2, "prox_q": "5" },
-        "Esperar um momento apropriado\n e conversar com ele em\n particular, explicando como \nse sente e pedindo mais \nespaço para falar.": { "lv": 2, "hp": 1, "prox_q": "5" },
-        "Interromper ele de volta nas\n próximas reuniões para\n mostrar como é incômodo.": { "lv": 0, "hp": -2, "prox_q": "5" }
-      }
-    },
-    "5": {
-      "texto": "Você percebe que um colega está mais calado e \nisolado nos últimos dias.",
-      "respostas": {
-        "Ignorar a situação, pois\n isso não é problema seu.": { "lv": -2, "hp": -2, "prox_q": null },
-        "Chamar esse colega para um\n café e perguntar se ele\n está bem, oferecendo apoio.": { "lv": 2, "hp": 2, "prox_q": null },
-        "Comentar com os outros \nsobre o comportamento dele,\n fazendo piadas.": { "lv": -1, "hp": -3, "prox_q": null }
+        "Se desesperar e não procurar\n uma solução plausível.": { "lv": 2, "hp": -2, "prox_q": null },
+        "Ignorar o time e esperar\n pelo que for decidido\n por todos.": { "lv": -1, "hp": -1, "prox_q": null },
+        "Liderar e orientar o time.": { "lv": 0, "hp": -2, "prox_q": null }
       }
     }
   },
@@ -54,25 +30,9 @@
     "7": {
       "texto": "Durante uma reunião, alguém comete um erro ao apresentar dados incorretos.\n Você sabe a informação correta.",
       "respostas": {
-        "Corrigir a pessoa \nimediatamente, em público, \nde forma direta e \nsem tato.": { "lv": 0, "hp": -2, "prox_q": "8" },
-        "Esperar a reunião terminar\n e conversar em particular,\n oferecendo ajuda para\n corrigir os dados.": { "lv": 2, "hp": 2, "prox_q": "8" },
-        "Ignorar o erro para \nevitar constrangimento, mesmo \nsabendo que isso pode\n prejudicar o grupo.": { "lv": -1, "hp": -1, "prox_q": "8" }
-      }
-    },
-    "8": {
-      "texto": "Um novo integrante entrou na equipe e parece estar perdido quanto\n aos processos e dinâmicas do grupo.",
-      "respostas": {
-        "Se oferecer para explicar\n o funcionamento e ajudá-lo\n a se integrar.": { "lv": 2, "hp": 2, "prox_q": "9" },
-        "Esperar que ele pergunte\n se tiver dúvidas.": { "lv": 0, "hp": 0, "prox_q": "9" },
-        "Reclamar com os outros \nsobre como ele está \natrasando o ritmo.": { "lv": -2, "hp": -2, "prox_q": "9" }
-      }
-    },
-    "9": {
-      "texto": "Você está com uma carga alta de trabalho e um colega pede ajuda\n com uma tarefa urgente.",
-      "respostas": {
-        "Negar ajuda sem explicação,\n dizendo que está ocupado.": { "lv": -1, "hp": -1, "prox_q": null },
-        "Avaliar seu tempo, explicar\n sua situação e tentar ajudar\n com o que for possível.": { "lv": 2, "hp": 1, "prox_q": null },
-        "Assumir a tarefa mesmo \nsem tempo, acumulando ainda\n mais trabalho e ficando\n sobrecarregado.": { "lv": 0, "hp": -2, "prox_q": null }
+        "Corrigir a pessoa \nimediatamente, em público, \nde forma direta e \nsem tato.": { "lv": 0, "hp": -2, "prox_q": null },
+        "Esperar a reunião terminar\n e conversar em particular,\n oferecendo ajuda para\n corrigir os dados.": { "lv": 2, "hp": 2, "prox_q": null },
+        "Ignorar o erro para \nevitar constrangimento, mesmo \nsabendo que isso pode\n prejudicar o grupo.": { "lv": -1, "hp": -1, "prox_q": null }
       }
     }
   },
@@ -89,25 +49,9 @@
     "11": {
       "texto": "Um colega está muito empolgado com uma ideia, mas você \nsabe que ela não vai funcionar bem.",
       "respostas": {
-        "Desqualificar a ideia na \nfrente de todos, sem \nexplicar o porquê.": { "lv": -1, "hp": -2, "prox_q": "12" },
-        "Ouvir com atenção, reconhecer \no esforço e depois apresentar\n seus pontos de forma \nrespeitosa.": { "lv": 2, "hp": 2, "prox_q": "12" },
-        "Fingir que concorda apenas\n para evitar conflito.": { "lv": 0, "hp": -1, "prox_q": "12" }
-      }
-    },
-    "12": {
-      "texto": "Você percebe que está monopolizando as conversas em reuniões.",
-      "respostas": {
-        "Refletir sobre seu \ncomportamento e começar a \ndar mais espaço para \nos outros falarem.": { "lv": 2, "hp": 1, "prox_q": "13" },
-        "Ignorar e continuar falando\n mais que os outros.": { "lv": -2, "hp": -2, "prox_q": "13" },
-        "Ficar em silêncio por completo\n nas próximas reuniões, mesmo\n tendo algo a contribuir.": { "lv": -1, "hp": -1, "prox_q": "13" }
-      }
-    },
-    "13": {
-      "texto": "Durante uma atividade em grupo, dois colegas discordam fortemente e \na discussão começa a prejudicar o andamento.",
-      "respostas": {
-        "Ouvir os dois lados com \natenção e tentar mediar o \nconflito com imparcialidade.": { "lv": 2, "hp": 1, "prox_q": null },
-        "Escolher um lado e apoiar\n abertamente, sem ouvir o outro.": { "lv": -1, "hp": -2, "prox_q": null },
-        "Sair do grupo para não \nse envolver.": { "lv": -2, "hp": -1, "prox_q": null }
+        "Desqualificar a ideia na \nfrente de todos, sem \nexplicar o porquê.": { "lv": -1, "hp": -2, "prox_q": null },
+        "Ouvir com atenção, reconhecer \no esforço e depois apresentar\n seus pontos de forma \nrespeitosa.": { "lv": 2, "hp": 2, "prox_q": null },
+        "Fingir que concorda apenas\n para evitar conflito.": { "lv": 0, "hp": -1, "prox_q": null }
       }
     }
   },
@@ -124,17 +68,9 @@
     "15": {
       "texto": "Um colega está visivelmente nervoso antes de uma \napresentação importante.",
       "respostas": {
-        "Oferecer apoio e palavras de \nincentivo, mostrando que ele\n pode contar com você.": { "lv": 2, "hp": 2, "prox_q": "16" },
-        "Ignorar a situação para não\n se envolver emocionalmente.": { "lv": -1, "hp": -1, "prox_q": "16" },
-        "Fazer piadas sobre o \nnervosismo para descontrair,\n mesmo que ele não \nache graça.": { "lv": -2, "hp": -2, "prox_q": "16" }
-      }
-    },
-    "16": {
-      "texto": "Durante uma discussão acalorada, você percebe que está\n começando a ficar irritado.",
-      "respostas": {
-        "Respirar fundo, se controlar e\n tentar manter o tom calmo.": { "lv": 2, "hp": 1, "prox_q": null },
-        "Levantar a voz e falar sem\n pensar nas consequências.": { "lv": -2, "hp": -2, "prox_q": null },
-        "Sair da conversa abruptamente\n sem explicar nada.": { "lv": -1, "hp": -1, "prox_q": null }
+        "Oferecer apoio e palavras de \nincentivo, mostrando que ele\n pode contar com você.": { "lv": 2, "hp": 2, "prox_q": null },
+        "Ignorar a situação para não\n se envolver emocionalmente.": { "lv": -1, "hp": -1, "prox_q": null },
+        "Fazer piadas sobre o \nnervosismo para descontrair,\n mesmo que ele não \nache graça.": { "lv": -2, "hp": -2, "prox_q": null }
       }
     }
    }
