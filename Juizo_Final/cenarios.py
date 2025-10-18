@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import variaveis as var
+import caminho as var
 
 class JogoDaVida(ctk.CTkToplevel):
     def __init__(self,master,fase):
@@ -97,7 +97,7 @@ class JogoDaVida(ctk.CTkToplevel):
             self.canvas.tag_unbind(f'botao{i}', "<Button-1>")
 
         # mostrar karma na tela
-        self.mostrar_karma(self.dados_questao['respostas'][chave]['lv'])
+        self.mostrar_karma(self.dados_questao['respostas'][chave]['karma'])
 
         self.after(1000,lambda: self.processar_clique(chave))
 

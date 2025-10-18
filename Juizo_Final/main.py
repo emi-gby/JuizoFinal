@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import variaveis as var
+import caminho as var
 import cenarios as cen
 import final as fim
 
@@ -23,7 +23,7 @@ class Init_Jogo(ctk.CTk):
         self.canvas.create_image(0,0,image=self.background_photo,anchor='nw')
 
         #Edificio- trabalho
-        self.trabalho_img = Image.open(var.caminho_trabalho_img).resize((330,430))
+        self.trabalho_img = Image.open(var.caminho_trabalho_img).resize((370,430))
         self.trabalho_photo = ImageTk.PhotoImage(self.trabalho_img)
         self.canvas.create_image(400, 520, image=self.trabalho_photo, tags='trabalho')
         self.canvas.tag_bind(f"trabalho", "<Button-1>", lambda _: self.chamar_fase('trabalho'))
@@ -60,7 +60,6 @@ class Init_Jogo(ctk.CTk):
         #Quando todas as fases forem finalizadas, o final do jogo é chamado
         if len(self.fases_lista) == 0:
             self.final_jogo = fim.FinalJogo(self,self.karma)
-            
     
         
 if __name__ == '__main__':

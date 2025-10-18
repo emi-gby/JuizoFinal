@@ -15,13 +15,13 @@ caminho_bg_img = ''
 
 caminho_main_img = 'imagens/backgrounds/main_background3.jpeg'
 
-caminho_trabalho_img = 'imagens/edificios/trabalho3.png'
+caminho_trabalho_img = 'imagens/edificios/trabalho.png'
 
-caminho_escola_img = 'imagens/edificios/escola3.png'
+caminho_escola_img = 'imagens/edificios/escola.png'
 
-caminho_familia_img = 'imagens/edificios/familia4.png'
+caminho_familia_img = 'imagens/edificios/familia.png'
 
-caminho_faculdade_img = 'imagens/edificios/faculdade3.png'
+caminho_faculdade_img = 'imagens/edificios/faculdade.png'
 
 
 def pegar_imagem(background):
@@ -38,8 +38,12 @@ def pegar_imagem(background):
     else:
         caminho_bg_img = 'imagens/backgrounds/background_trabalho5.jpeg'
 
-    
 
+caminho_inferno_bg = 'imagens/backgrounds/inferno.png'
+
+caminho_paraiso_bg = 'imagens/backgrounds/paraiso2.png'
+
+caminho_purgatorio_bg = 'imagens/backgrounds/purgatorio.png'
 
 with open('dados/perg_resp.json',encoding='UTF-8') as f:   
     dados = json.load(f) 
