@@ -3,13 +3,17 @@ import json
 WIN_ALTURA = 750
 WIN_LARGURA = 1350
 
+caminho_inicio_bg = 'imagens/backgrounds/ininio_bg.png'
+
+caminho_play_botao = 'imagens/play_botao.png'
+
 caminho_botao_img = 'imagens/Botao.png'
 
 caminho_balao_perg = 'imagens/Balao_pergunta.png'
 
-caminho_karma_img = 'imagens/karma.jpeg'
-caminho_anjo_img = 'imagens/anjo2.png'
-caminho_demonio_img = 'imagens/demonio2.png'
+caminho_karma_img = 'imagens/karma3.png'
+caminho_anjo_img = 'imagens/anjo_icon.png'
+caminho_demonio_img = 'imagens/demonio_icon.png'
 
 caminho_bg_img = ''
 
@@ -41,7 +45,7 @@ def pegar_imagem(background):
 
 caminho_inferno_bg = 'imagens/backgrounds/inferno.png'
 
-caminho_paraiso_bg = 'imagens/backgrounds/paraiso2.png'
+caminho_paraiso_bg = 'imagens/backgrounds/paraiso4.png'
 
 caminho_purgatorio_bg = 'imagens/backgrounds/purgatorio.png'
 

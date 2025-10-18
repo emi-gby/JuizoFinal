@@ -1,10 +1,10 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import caminho as var
+import caminhos as var
 import cenarios as cen
-import final as fim
+import final_jogo as fim
 
-class Init_Jogo(ctk.CTk):
+class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.geometry(f'{var.WIN_LARGURA}x{var.WIN_ALTURA}')
@@ -35,7 +35,7 @@ class Init_Jogo(ctk.CTk):
         self.canvas.tag_bind(f"escola", "<Button-1>", lambda _: self.chamar_fase('escola'))
 
         #Edificio- familia
-        self.familia_img = Image.open(var.caminho_familia_img).resize((390,400))
+        self.familia_img = Image.open(var.caminho_familia_img).resize((370,360))
         self.familia_photo = ImageTk.PhotoImage(self.familia_img)
         self.canvas.create_image(955, 560, image=self.familia_photo, tags='familia')
         self.canvas.tag_bind(f"familia", "<Button-1>", lambda _: self.chamar_fase('familia'))
@@ -45,7 +45,22 @@ class Init_Jogo(ctk.CTk):
         self.faculdade_photo = ImageTk.PhotoImage(self.faculdade_img)
         self.canvas.create_image(960, 180, image=self.faculdade_photo, tags='faculdade')
         self.canvas.tag_bind(f"faculdade", "<Button-1>", lambda _: self.chamar_fase('faculdade'))
-        
+
+        #Imagem Inicio
+        self.inicio_img = Image.open(var.caminho_inicio_bg).resize((var.WIN_LARGURA,var.WIN_ALTURA))
+        self.inicio_photo = ImageTk.PhotoImage(self.inicio_img)
+        self.canvas.create_image(0,0,image=self.inicio_photo,anchor='nw',tags='inicio')
+
+        #Imagem Play Botao
+        self.play_botao_img = Image.open(var.caminho_play_botao).resize((400,280))
+        self.play_botao_photo = ImageTk.PhotoImage(self.play_botao_img)
+        self.canvas.create_image(var.WIN_LARGURA/2,650,image=self.play_botao_photo,tags='inicio')
+        self.canvas.tag_bind("inicio", "<Button-1>",lambda _: self.tela_principal())
+
+    def tela_principal(self):
+        '''Destroe a tela inicial do jogo'''
+        self.canvas.delete('inicio')
+
 
     def chamar_fase(self,fase):
         '''Chama classe dos cenários e passa o valor da fase de acordo com  o 'botão' clicado '''
@@ -61,8 +76,7 @@ class Init_Jogo(ctk.CTk):
         if len(self.fases_lista) == 0:
             self.final_jogo = fim.FinalJogo(self,self.karma)
     
-        
 if __name__ == '__main__':
-    jogo = Init_Jogo()
+    jogo = App()
     jogo.mainloop()
 

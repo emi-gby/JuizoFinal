@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import caminho as var
+import caminhos as var
 
 class JogoDaVida(ctk.CTkToplevel):
     def __init__(self,master,fase):

@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import caminho as var
+import caminhos as var
 
 
 class FinalJogo(ctk.CTkToplevel):
@@ -28,6 +28,11 @@ class FinalJogo(ctk.CTkToplevel):
         self.purgatorio_img = Image.open(var.caminho_purgatorio_bg).resize((var.WIN_LARGURA,var.WIN_ALTURA))
         self.purgatorio_photo = ImageTk.PhotoImage(self.purgatorio_img)
 
+        #Imagem Morte (teste)
+        self.morte_img = Image.open('imagens/morte.png').resize((650,650))
+        self.morte_photo = ImageTk.PhotoImage(self.morte_img)
+
+
         self.canvas.create_text(700,400,text=f'karma total : {self.karma}',font=('arial',75))
         self.canvas.create_image(0,0,image='',anchor='nw',tags='bg')
 
@@ -35,9 +40,10 @@ class FinalJogo(ctk.CTkToplevel):
         
     def juizo_final(self):
         print(self.karma)
-        if self.karma <= 10:
+        if self.karma <= -20:
             self.canvas.itemconfig('bg',image=self.inferno_photo)
-        elif self.karma >= 30:
+        elif self.karma >= 35:
             self.canvas.itemconfig('bg',image=self.paraiso_photo)
         else:
             self.canvas.itemconfig('bg',image=self.purgatorio_photo)
+            self.canvas.create_image((600,500),image=self.morte_photo) #(teste)
