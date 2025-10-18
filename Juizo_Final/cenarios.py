@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
 import caminhos as var
-
+from canvas import Canvas
 class JogoDaVida(ctk.CTkToplevel):
     def __init__(self,master,fase):
         super().__init__(master)
@@ -17,18 +17,13 @@ class JogoDaVida(ctk.CTkToplevel):
         self.questao_atual = '1'    
 
         #Cria canvas 
-        self.canvas = ctk.CTkCanvas(self, width=var.WIN_LARGURA, height=var.WIN_ALTURA, highlightthickness=0)
-        self.canvas.pack(fill="both", expand=True)
+        self.canvas = Canvas(self)
 
         #Imagem background 
-        self.background_img = Image.open(var.caminho_bg_img).resize((var.WIN_LARGURA,var.WIN_ALTURA))
-        self.background_photo = ImageTk.PhotoImage(self.background_img)
-        self.canvas.create_image(0,0,image=self.background_photo,anchor='nw')
-
+        self.canvas.criar_imagem(caminho=var.caminho_bg_img,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags=None,anchor='nw')
+    
         #Imagem do balao de pergunta
-        self.balao_img = Image.open(var.caminho_balao_perg).resize((1500,400))
-        self.balao_photo = ImageTk.PhotoImage(self.balao_img)
-        self.canvas.create_image(var.WIN_LARGURA/2, 90, image=self.balao_photo)
+        self.canvas.criar_imagem(caminho=var.caminho_balao_perg,tamanho=(1500,400),x=var.WIN_LARGURA/2,y=90,tags=None,anchor='center')
 
         #Display do texto da questão
         self.canvas.create_text(var.WIN_LARGURA/2,55,font=('consolas',20),text='',tags='texto_questao') 
@@ -36,6 +31,7 @@ class JogoDaVida(ctk.CTkToplevel):
         #Imagem do botao
         self.botao_img = Image.open(var.caminho_botao_img).resize((470,230))
         self.botao_photo = ImageTk.PhotoImage(self.botao_img)
+
 
         #Imagem Karma
         self.karma_img = Image.open(var.caminho_karma_img).resize((70,70))

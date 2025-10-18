@@ -3,6 +3,7 @@ from PIL import Image, ImageTk
 import caminhos as var
 import cenarios as cen
 import final_jogo as fim
+from canvas import Canvas
 
 class App(ctk.CTk):
     def __init__(self):
@@ -14,52 +15,33 @@ class App(ctk.CTk):
         self.fases_lista = ['faculdade','escola','trabalho','familia']
 
         #Cria canvas 
-        self.canvas = ctk.CTkCanvas(self, width=var.WIN_LARGURA, height=var.WIN_ALTURA, highlightthickness=0)
-        self.canvas.pack(fill="both", expand=True)
+        self.canvas = Canvas(self)
 
         #Imagem background 
-        self.background_img = Image.open(var.caminho_main_img).resize((var.WIN_LARGURA,var.WIN_ALTURA))
-        self.background_photo = ImageTk.PhotoImage(self.background_img)
-        self.canvas.create_image(0,0,image=self.background_photo,anchor='nw')
-
+        self.canvas.criar_imagem(caminho=var.caminho_main_img,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags=None,anchor='nw')
+    
         #Edificio- trabalho
-        self.trabalho_img = Image.open(var.caminho_trabalho_img).resize((370,430))
-        self.trabalho_photo = ImageTk.PhotoImage(self.trabalho_img)
-        self.canvas.create_image(400, 520, image=self.trabalho_photo, tags='trabalho')
-        self.canvas.tag_bind(f"trabalho", "<Button-1>", lambda _: self.chamar_fase('trabalho'))
+        self.canvas.criar_imagem(caminho=var.caminho_trabalho_img,tamanho=(370,430),x=400,y=520,tags="trabalho",anchor='center')
 
         #Edificio- escola
-        self.escola_img = Image.open(var.caminho_escola_img).resize((300,320))
-        self.escola_photo = ImageTk.PhotoImage(self.escola_img)
-        self.canvas.create_image(400, 200, image=self.escola_photo, tags='escola')
-        self.canvas.tag_bind(f"escola", "<Button-1>", lambda _: self.chamar_fase('escola'))
+        self.canvas.criar_imagem(caminho=var.caminho_escola_img,tamanho=(300,320),x=400,y=200,tags="escola",anchor='center')
 
         #Edificio- familia
-        self.familia_img = Image.open(var.caminho_familia_img).resize((370,360))
-        self.familia_photo = ImageTk.PhotoImage(self.familia_img)
-        self.canvas.create_image(955, 560, image=self.familia_photo, tags='familia')
-        self.canvas.tag_bind(f"familia", "<Button-1>", lambda _: self.chamar_fase('familia'))
+        self.canvas.criar_imagem(caminho=var.caminho_familia_img,tamanho=(370,360),x=955,y=560,tags="familia",anchor='center')
 
         #Edificio- faculdade
-        self.faculdade_img = Image.open(var.caminho_faculdade_img).resize((270,280))
-        self.faculdade_photo = ImageTk.PhotoImage(self.faculdade_img)
-        self.canvas.create_image(960, 180, image=self.faculdade_photo, tags='faculdade')
-        self.canvas.tag_bind(f"faculdade", "<Button-1>", lambda _: self.chamar_fase('faculdade'))
+        self.canvas.criar_imagem(caminho=var.caminho_faculdade_img,tamanho=(270,280),x=960,y=180,tags="faculdade",anchor='center')
 
         #Imagem Inicio
-        self.inicio_img = Image.open(var.caminho_inicio_bg).resize((var.WIN_LARGURA,var.WIN_ALTURA))
-        self.inicio_photo = ImageTk.PhotoImage(self.inicio_img)
-        self.canvas.create_image(0,0,image=self.inicio_photo,anchor='nw',tags='inicio')
+        self.canvas.criar_imagem(caminho=var.caminho_inicio_bg,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags= "inicio_img",anchor='nw')
 
         #Imagem Play Botao
-        self.play_botao_img = Image.open(var.caminho_play_botao).resize((400,280))
-        self.play_botao_photo = ImageTk.PhotoImage(self.play_botao_img)
-        self.canvas.create_image(var.WIN_LARGURA/2,650,image=self.play_botao_photo,tags='inicio')
-        self.canvas.tag_bind("inicio", "<Button-1>",lambda _: self.tela_principal())
+        self.canvas.criar_imagem(caminho=var.caminho_play_botao,tamanho=(400,280),x=var.WIN_LARGURA/2,y=640,tags="inicio_botao",anchor='center')
+
 
     def tela_principal(self):
         '''Destroe a tela inicial do jogo'''
-        self.canvas.delete('inicio')
+        self.canvas.delete('inicio_img','inicio_botao')
 
 
     def chamar_fase(self,fase):
