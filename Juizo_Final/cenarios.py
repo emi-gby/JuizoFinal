@@ -2,6 +2,7 @@ import customtkinter as ctk
 from PIL import Image, ImageTk
 import caminhos as var
 from canvas import Canvas
+from pygame import mixer
 class JogoDaVida(ctk.CTkToplevel):
     def __init__(self,master,fase):
         super().__init__(master)
@@ -12,6 +13,8 @@ class JogoDaVida(ctk.CTkToplevel):
         self.karma = 0
         self.master = master
         var.pegar_imagem(fase)
+
+        mixer.init()
 
         #Questão atual --> no começo do jogo
         self.questao_atual = '1'    
@@ -29,9 +32,8 @@ class JogoDaVida(ctk.CTkToplevel):
         self.canvas.create_text(var.WIN_LARGURA/2,55,font=('consolas',20),text='',tags='texto_questao') 
 
         #Imagem do botao
-        self.botao_img = Image.open(var.caminho_botao_img).resize((470,230))
+        self.botao_img = Image.open(var.caminho_botao_img).resize((760,570))
         self.botao_photo = ImageTk.PhotoImage(self.botao_img)
-
 
         #Imagem Karma
         self.karma_img = Image.open(var.caminho_karma_img).resize((70,70))
@@ -89,6 +91,10 @@ class JogoDaVida(ctk.CTkToplevel):
             
     def clicar_botao(self,chave):
         '''Disabilita os botões e define um tempo de espera para a próxima questão'''
+
+        #som do clique do botão
+        mixer.Sound(var.caminho_botao_clique_som).play()
+
         for i in range(3):
             self.canvas.tag_unbind(f'botao{i}', "<Button-1>")
 

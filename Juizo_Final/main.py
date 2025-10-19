@@ -1,9 +1,9 @@
 import customtkinter as ctk
-from PIL import Image, ImageTk
 import caminhos as var
 import cenarios as cen
 import final_jogo as fim
 from canvas import Canvas
+from pygame import mixer
 
 class App(ctk.CTk):
     def __init__(self):
@@ -13,6 +13,8 @@ class App(ctk.CTk):
         self.resizable(False,False)
         self.karma = 0
         self.fases_lista = ['faculdade','escola','trabalho','familia']
+
+        mixer.init()
 
         #Cria canvas 
         self.canvas = Canvas(self)
@@ -36,12 +38,22 @@ class App(ctk.CTk):
         self.canvas.criar_imagem(caminho=var.caminho_inicio_bg,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags= "inicio_img",anchor='nw')
 
         #Imagem Play Botao
-        self.canvas.criar_imagem(caminho=var.caminho_play_botao,tamanho=(400,280),x=var.WIN_LARGURA/2,y=640,tags="inicio_botao",anchor='center')
+        self.canvas.criar_imagem(caminho=var.caminho_play_botao,tamanho=(510,190),x=var.WIN_LARGURA/2,y=663,tags="inicio_botao",anchor='center')
 
+        #fim.FinalJogo(self,10)
+ 
 
     def tela_principal(self):
-        '''Destroe a tela inicial do jogo'''
+        '''Destroe a tela inicial do jogo e começa a soundtrack'''
         self.canvas.delete('inicio_img','inicio_botao')
+        #som clique botao start
+        start_som = mixer.Sound(var.caminho_botao_start_som).play()
+        start_som.set_volume(0.7)
+
+        #soundtrack
+        mixer.music.load(var.caminho_soundtrack)
+        mixer.music.set_volume(0.2)
+        mixer.music.play(loops=-1)
 
 
     def chamar_fase(self,fase):
