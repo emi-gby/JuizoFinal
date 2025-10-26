@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import caminhos as var
+import config as var
 from canvas import Canvas
 from pygame import mixer
 class JogoDaVida(ctk.CTkToplevel):
@@ -12,7 +12,7 @@ class JogoDaVida(ctk.CTkToplevel):
         self.fase_atual = fase
         self.karma = 0
         self.master = master
-        var.pegar_imagem(fase)
+        var.caminho_bg_img = var.pegar_imagem(fase)
 
         mixer.init()
 
@@ -80,13 +80,13 @@ class JogoDaVida(ctk.CTkToplevel):
         mult_x_coord = [1,3,5]
         for i, mult in enumerate(mult_x_coord):
             #cria e posiciona cada imagem e texto do botao e associa cada um a uma tag correspondente
-            self.canvas.create_image(var.WIN_LARGURA/6*mult,630, image=self.botao_photo,tags=f'botao{i}')
-            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('consolas',15),tags=f'botao{i}')
+            tag = f'botao{i}'
+            self.canvas.create_image(var.WIN_LARGURA/6*mult,630, image=self.botao_photo,tags=tag)
+            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('consolas',15),tags=tag)
+
+            #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
+            self.canvas.tag_bind(tag, "<Button-1>", lambda e, k=chave[i]: self.clicar_botao(k))
             
-        #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
-        self.canvas.tag_bind(f"botao{0}", "<Button-1>", lambda _: self.clicar_botao(chave[0])) 
-        self.canvas.tag_bind(f"botao{1}", "<Button-1>", lambda _: self.clicar_botao(chave[1]))
-        self.canvas.tag_bind(f"botao{2}", "<Button-1>", lambda _: self.clicar_botao(chave[2]))
 
             
     def clicar_botao(self,chave):

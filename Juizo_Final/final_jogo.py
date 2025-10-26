@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import caminhos as var
+import config as var
 from canvas import Canvas
 from pygame import mixer
 
@@ -11,7 +11,7 @@ class FinalJogo(ctk.CTkToplevel):
         self.title(f'Juizo Final')
         self.resizable(False,False)
         self.karma = karma
-        self.frase_final = {'purgatorio':'Você plantou, \nagora colha as suas \nconsequências, bem vindo \nao seu novo lar.','inferno':'hold','paraiso':'hold'}
+        self.frase_final = {'purgatorio':'Você plantou, \nagora colha as suas \nconsequências, bem vindo \nao seu novo lar.','inferno':'A tentação não \nfoi minha criação…\n foi sua desculpa.','paraiso':'Até na escuridão,\n você encontrou \num motivo para agir\n com luz.'}
 
         #Som do texto sendo escrito
         mixer.init()
@@ -31,7 +31,7 @@ class FinalJogo(ctk.CTkToplevel):
         self.canvas.importar_img_final(caminho=var.caminho_purgatorio_bg,tags='purgatorio')
 
         #Imagem Morte (teste)
-        self.morte_img = Image.open('imagens/morte.png').resize((650,650))
+        self.morte_img = Image.open('imagens/demonio2.png').resize((650,650))
         self.morte_photo = ImageTk.PhotoImage(self.morte_img)
 
         self.canvas.create_image(0,0,image='',anchor='nw',tags='bg')
@@ -39,19 +39,16 @@ class FinalJogo(ctk.CTkToplevel):
         #Imagem Balao 
         imagem_botao = Image.open(var.caminho_botao_img).resize((820,800))
         self.photo_botao = ImageTk.PhotoImage(imagem_botao)
-
-        ctk.FontManager().load_font('fontes/goth.otf')
-
         self.juizo_final()
         
     def juizo_final(self):
         '''Define o background a partir do karma, chama a função do efeito ao escrever e inicializa o som do efeito'''
-        if self.karma <= -20:
+        if self.karma <= var.KARMA_BOM:
             self.canvas.itemconfig('bg',image=self.canvas.final_photos_dict['inferno'])
             self.efeito_escrever(self.frase_final['inferno'])
             self.escrever_som.play(loops=-1)
 
-        elif self.karma >= 35:
+        elif self.karma >= var.KARMA_RUIM:
             self.canvas.itemconfig('bg',image=self.canvas.final_photos_dict['paraiso'])
             self.efeito_escrever(self.frase_final['paraiso'])
             self.escrever_som.play(loops=-1)

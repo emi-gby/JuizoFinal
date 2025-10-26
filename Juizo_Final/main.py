@@ -1,5 +1,5 @@
 import customtkinter as ctk
-import caminhos as var
+import config as var
 import cenarios as cen
 import final_jogo as fim
 from canvas import Canvas
@@ -40,7 +40,7 @@ class App(ctk.CTk):
         #Imagem Play Botao
         self.canvas.criar_imagem(caminho=var.caminho_play_botao,tamanho=(510,190),x=var.WIN_LARGURA/2,y=663,tags="inicio_botao",anchor='center')
 
-        #fim.FinalJogo(self,10)
+        #fim.FinalJogo(self,-40)
  
 
     def tela_principal(self):

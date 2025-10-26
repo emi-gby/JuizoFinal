@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-from caminhos import WIN_ALTURA, WIN_LARGURA
+from config import WIN_ALTURA, WIN_LARGURA
 
 class Canvas(ctk.CTkCanvas):
     def __init__(self,master):
