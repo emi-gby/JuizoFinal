@@ -4,168 +4,170 @@
       "1": {
         "texto": "Você está em um trabalho em grupo e percebe que um colega não entregou\n a parte dele, faltando poucas horas para o prazo final.",
         "respostas": {
-          "Fazer a parte dele sozinho \nàs pressas, sem avisar,\ne guardar ressentimento.": { "karma": -1, "prox_q": "2" },
+          "Enviar uma mensagem dura\nno grupo, cobrando e ameaçando\nexcluí-lo do trabalho.": { "karma": -2, "prox_q": "2" },
           " Chamar o colega para conversar,\nexplicar a importância do prazo\ne oferecer ajuda \npara finalizar.": { "karma": 2, "prox_q": "2" },
-          "Enviar uma mensagem dura\nno grupo, cobrando e ameaçando\nexcluí-lo do trabalho.": { "karma": -2, "prox_q": "2" }
+          "Fazer a parte dele sozinho \nàs pressas, sem avisar,\ne guardar ressentimento.": { "karma": -1, "prox_q": "2" }
         }
       },
       "2": {
         "texto": "Seu grupo está perdido e sem saber como dividir\n as próximas etapas do projeto.",
         "respostas": {
+          "Sugerir um plano simples\ne orientar o grupo para\ndividir as tarefas.": { "karma": 2, "prox_q": "3" },
           "Entrar em pânico\ne parar de contribuir.": { "karma": -2, "prox_q": "3" },
-          "Esperar que alguém\ntome a frente,\nsem tentar ajudar.": { "karma": -1, "prox_q": "3" },
-          "Sugerir um plano simples\ne orientar o grupo para\ndividir as tarefas.": { "karma": 2, "prox_q": "3" }
+          "Esperar que alguém\ntome a frente,\nsem tentar ajudar.": { "karma": -1, "prox_q": "3" }
         }
       },
       "3": {
         "texto": "Você notou que um colega está desanimado\n e não participa efetivamente nas reuniões.",
         "respostas": {
+          "Falar para o grupo todo que ele\nprecisa se esforçar mais\nou será excluído.": { "karma": -2, "prox_q": "4" },
           "Ignorar, pois não é \nproblema seu.": { "karma": -1, "prox_q": "4" },
-          "Convidar para conversar\nem particular, ouvir o que \nestá afetando e oferecer apoio.": { "karma": 2, "prox_q": "4" },
-          "Falar para o grupo todo que ele\nprecisa se esforçar mais\nou será excluído.": { "karma": -2, "prox_q": "4" }
+          "Convidar para conversar\nem particular, ouvir o que \nestá afetando e oferecer apoio.": { "karma": 2, "prox_q": "4" }
         }
       },
       "4": {
         "texto": "Durante a apresentação do grupo,\n seu colega esquece parte importante do conteúdo.",
         "respostas": {
+          "Fazer um comentário sarcástico\nsobre o esquecimento.": { "karma": -2, "prox_q": "5" },
           "Corrigir rapidamente\ne seguir com naturalidade.": { "karma": 2, "prox_q": "5" },
-          "Ficar em silêncio,\ndeixando o erro passar.": { "karma": -1, "prox_q": "5" },
-          "Fazer um comentário sarcástico\nsobre o esquecimento.": { "karma": -2, "prox_q": "5" }
+          "Ficar em silêncio,\ndeixando o erro passar.": { "karma": -1, "prox_q": "5" }
         }
       },
       "5": {
         "texto": "Você percebe que está mais irritado que o normal\n e isso está afetando sua participação no grupo.",
         "respostas": {
+          "Sair do grupo abruptamente\nsem explicar por que\nestá chateado.": { "karma": -1, "prox_q": null},
           "Reconhecer seu estado emocional,\nrespirar fundo e pedir um momento\npara se acalmar antes de continuar.": { "karma": 2, "prox_q": null},
-          "Continuar participando,\nmas sendo mais ácido\ne impaciente com os colegas.": { "karma": -2, "prox_q": null },
-          "Sair do grupo abruptamente\nsem explicar por que\nestá chateado.": { "karma": -1, "prox_q": null}
+          "Continuar participando,\nmas sendo mais ácido\ne impaciente com os colegas.": { "karma": -2, "prox_q": null }
         }
       }
     },
+
     "faculdade": {
       "1": {
         "texto": "Durante uma discussão no grupo de estudos, dois colegas \ncomeçam a se exaltar, deixando o clima tenso.",
         "respostas": {
+          "Escolher um lado\ne aumentar o conflito.": { "karma": -2, "prox_q": "2" },
           "Intervir com calma,\nsugerindo uma pausa\npara todos respirarem\ne depois retomar.": { "karma": 2, "prox_q": "2" },
-          "Ficar quieto\ne deixar a discussão acontecer.": { "karma": 0, "prox_q": "2" },
-          "Escolher um lado\ne aumentar o conflito.": { "karma": -2, "prox_q": "2" }
+          "Ficar quieto\ne deixar a discussão acontecer.": { "karma": 0, "prox_q": "2" }
         }
       },
       "2": {
         "texto": "Em uma apresentação, alguém compartilha dados errados.\n Você sabe a informação correta.",
         "respostas": {
-          "Corrigir a pessoa imediatamente\ne de forma direta,\nmesmo que cause constrangimento.": { "karma": -1, "prox_q": "3" },
+          "Ignorar o erro\npara evitar desconforto,\nmesmo sabendo que pode\nprejudicar o grupo.": { "karma": -1, "prox_q": "3" },
           "Esperar a apresentação terminar\ne conversar em particular,\noferecendo ajuda para corrigir.": { "karma": 2, "prox_q": "3" },
-          "Ignorar o erro\npara evitar desconforto,\nmesmo sabendo que pode\nprejudicar o grupo.": { "karma": -1, "prox_q": "3" }
+          "Corrigir a pessoa imediatamente\ne de forma direta,\nmesmo que cause constrangimento.": { "karma": -1, "prox_q": "3" }
         }
       },
       "3": {
         "texto": "Você não estudou para uma prova importante\n e está pensando em colar para tirar uma boa nota.",
         "respostas": {
+          "Tentar colar, mas se sentir\nculpado e parar no meio,\nsem resolver nada.": { "karma": -1, "prox_q": "4" },
           "Assumir que não estudou, \naceitar a nota baixa \ne se comprometer a estudar \nmelhor.": { "karma": 3, "prox_q": "4" },
-          "Colar discretamente,\njustificando que 'todo mundo faz'\ne que você precisa da nota.": { "karma": -2, "prox_q": "4" },
-          "Tentar colar, mas se sentir\nculpado e parar no meio,\nsem resolver nada.": { "karma": -1, "prox_q": "4" }
+          "Colar discretamente,\njustificando que 'todo mundo faz'\ne que você precisa da nota.": { "karma": -2, "prox_q": "4" }
         }
       },
       "4": {
         "texto": "Durante um seminário, você percebe que seu grupo\n deixou de incluir uma parte importante.",
         "respostas": {
-          "Assumir o erro com o professor\ne explicar a falha.": { "karma": 2, "prox_q": "5" },
+          "Fingir que estava tudo certo\ne torcer para não perceberem.": { "karma": -1, "prox_q": "5" },
           "Culpar um colega\npor não ter lembrado.": { "karma": -2, "prox_q": "5" },
-          "Fingir que estava tudo certo\ne torcer para não perceberem.": { "karma": -1, "prox_q": "5" }
+          "Assumir o erro com o professor\ne explicar a falha.": { "karma": 2, "prox_q": "5" }
         }
       },
       "5":{
         "texto": "Você recebe uma crítica construtiva do professor\n sobre sua apresentação.",
         "respostas": {
-          "Refletir sobre o feedback,\nidentificar pontos de melhoria\ne agradecer pela observação.": { "karma": 2, "prox_q": null },
           "Aceitar sem pensar muito,\nmas não mudar nada.": { "karma": 0, "prox_q": null },
-          "Ficar na defensiva\ne rejeitar a crítica.": { "karma": -2, "prox_q": null }
+          "Ficar na defensiva\ne rejeitar a crítica.": { "karma": -2, "prox_q": null },
+          "Refletir sobre o feedback,\nidentificar pontos de melhoria\ne agradecer pela observação.": { "karma": 2, "prox_q": null }
         }
       }
     },
+
     "trabalho": {
       "1": {
         "texto": "Você cometeu um erro que atrasou a entrega\n de um projeto importante no trabalho.",
         "respostas": {
+          "Culpar um colega para\nse livrar da \nresponsabilidade.": { "karma": -3, "prox_q": "2" },
           "Assumir o erro, informar a \nequipe e buscar soluções\npara resolver.": { "karma": 3, "prox_q": "2" },
-          "Tentar esconder o erro,\nesperando que ninguém perceba.": { "karma": -1, "prox_q": "2" },
-          "Culpar um colega para\nse livrar da \nresponsabilidade.": { "karma": -3, "prox_q": "2" }
+          "Tentar esconder o erro,\nesperando que ninguém perceba.": { "karma": -1, "prox_q": "2" }
         }
       },
       "2": {
         "texto": "Um colega está muito animado com uma ideia, mas você \nsabe que ela provavelmente não vai funcionar.",
         "respostas": {
+          "Fingir que concorda\npara evitar conflito.": { "karma": 0, "prox_q": "3" },
           "Desmerecer a ideia\nna frente de todos,\nsem explicar o motivo.": { "karma": -2, "prox_q": "3" },
-          "Ouvir com atenção,\nvalorizar o entusiasmo\ne depois apresentar seus pontos\nde forma respeitosa.": { "karma": 2, "prox_q": "3" },
-          "Fingir que concorda\npara evitar conflito.": { "karma": 0, "prox_q": "3" }
+          "Ouvir com atenção,\nvalorizar o entusiasmo\ne depois apresentar seus pontos\nde forma respeitosa.": { "karma": 2, "prox_q": "3" }
         }
       },
       "3": {
         "texto": "Durante uma reunião com o cliente, você nota que seu \ngestor está se equivocando em uma explicação.",
         "respostas": {
+          "Ficar calado\npara evitar atrito.": { "karma": -1, "prox_q": "4" },
           "Corrigir com respeito,\ncomplementando a explicação.": { "karma": 2, "prox_q": "4" },
-          "Corrigir diretamente\ne expor o erro.": { "karma": -1, "prox_q": "4" },
-          "Ficar calado\npara evitar atrito.": { "karma": -1, "prox_q": "4" }
+          "Corrigir diretamente\ne expor o erro.": { "karma": -1, "prox_q": "4" }
         }
       },
-        "4": {
-          "texto": "Você está sobrecarregado com múltiplos projetos urgentes\n e sente que está próximo do esgotamento.",
-          "respostas": {
-            "Conversar com o gestor,\nexplicar a situação e pedir\napoio para repriorizar as tarefas.": { "karma": 2, "prox_q": "5" },
-            "Continuar aceitando tudo,\ntrabalhar até tarde todos os dias\ne sacrificar sua saúde.": { "karma": -2, "prox_q": "5" },
-            "Começar a fazer tudo pela metade,\nsem avisar ninguém sobre\nsuas dificuldades.": { "karma": -1, "prox_q": "5" }
+      "4": {
+        "texto": "Você está sobrecarregado com múltiplos projetos urgentes\n e sente que está próximo do esgotamento.",
+        "respostas": {
+          "Começar a fazer tudo pela metade,\nsem avisar ninguém sobre\nsuas dificuldades.": { "karma": -1, "prox_q": "5" },
+          "Conversar com o gestor,\nexplicar a situação e pedir\napoio para repriorizar as tarefas.": { "karma": 2, "prox_q": "5" },
+          "Continuar aceitando tudo,\ntrabalhar até tarde todos os dias\ne sacrificar sua saúde.": { "karma": -2, "prox_q": "5" }
         }
       },
       "5": {
         "texto": "Você foi elogiado por uma tarefa que, na verdade,\n foi finalizada por um colega.",
         "respostas": {
-          "Corrigir o gestor e dar crédito\na quem realmente fez.": { "karma": 2, "prox_q": null },
+          "Assumir o crédito\ne aproveitar a boa impressão.": { "karma": -2, "prox_q": null },
           "Aceitar o elogio,\nmas depois contar ao colega.": { "karma": -1, "prox_q": null },
-          "Assumir o crédito\ne aproveitar a boa impressão.": { "karma": -2, "prox_q": null }
+          "Corrigir o gestor e dar crédito\na quem realmente fez.": { "karma": 2, "prox_q": null }
         }
       }
     },
      
-        "familia": {
+    "familia": {
       "1": {
         "texto": "Você está em um encontro familiar com pessoas que têm opiniões\n e crenças diferentes das suas.",
         "respostas": {
+          "Evitar conversas\npara não causar discussões.": { "karma": -1, "prox_q": "2" },
           "Demonstrar respeito,\nouvir as opiniões e tentar\n entender os pontos de\n vista diferentes.": { "karma": 2, "prox_q": "2" },
-          "Ignorar as diferenças\ne tentar impor suas ideias.": { "karma": -2, "prox_q": "2" },
-          "Evitar conversas\npara não causar discussões.": { "karma": -1, "prox_q": "2" }
+          "Ignorar as diferenças\ne tentar impor suas ideias.": { "karma": -2, "prox_q": "2" }
         }
       },
       "2": {
         "texto": "Um parente está nervoso antes de falar\n na reunião familiar importante.",
         "respostas": {
+          "Fazer piadas sobre o nervosismo,\nmesmo que a pessoa não goste.": { "karma": -2, "prox_q": "3" },
           "Oferecer apoio e palavras\nde incentivo para ajudar\na tranquilizar.": { "karma": 2, "prox_q": "3" },
-          "Ignorar para não se \nenvolver emocionalmente.": { "karma": -1, "prox_q": "3" },
-          "Fazer piadas sobre o nervosismo,\nmesmo que a pessoa não goste.": { "karma": -2, "prox_q": "3" }
+          "Ignorar para não se \nenvolver emocionalmente.": { "karma": -1, "prox_q": "3" }
         }
       },
       "3": {
         "texto": "Durante um almoço, surge um comentário preconceituoso\n feito por um familiar mais velho.",
         "respostas": {
-          "Tentar corrigir com respeito,\nexplicando por que o comentário\né ofensivo.": { "karma": 2, "prox_q": "4" },
+          "Ficar em silêncio\ne mudar de assunto.": { "karma": -1, "prox_q": "4" },
           "Rir junto para não\ncriar conflito.": { "karma": -2, "prox_q": "4" },
-          "Ficar em silêncio\ne mudar de assunto.": { "karma": -1, "prox_q": "4" }
+          "Tentar corrigir com respeito,\nexplicando por que o comentário\né ofensivo.": { "karma": 2, "prox_q": "4" }
         }
       },
       "4": {
         "texto": "Você percebe que um parente está isolado\n e não participa das conversas.",
         "respostas": {
-          "Chamar para conversar,\nincluir nas atividades e \nouvir com atenção.": { "karma": 2, "prox_q": "5" },
+          "Comentar com outros\nque ele está sendo antissocial.": { "karma": -2, "prox_q": "5" },
           "Fingir que não percebeu\npara não se incomodar.": { "karma": -1, "prox_q": "5" },
-          "Comentar com outros\nque ele está sendo antissocial.": { "karma": -2, "prox_q": "5" }
+          "Chamar para conversar,\nincluir nas atividades e \nouvir com atenção.": { "karma": 2, "prox_q": "5" }
         }
       },
       "5": {
         "texto": "Um membro da família está passando por dificuldades financeiras\n mas não comentou com ninguém.",
         "respostas": {
+          "Fazer comentários indiretos\nsobre a situação na \nfrente dos outros.": { "karma": -2, "prox_q": null },
           "Oferecer ajuda de forma \ndiscreta e empática.": { "karma": 2, "prox_q": null },
-          "Esperar que ele peça,\nsem se envolver.": { "karma": 0, "prox_q": null },
-          "Fazer comentários indiretos\nsobre a situação na \nfrente dos outros.": { "karma": -2, "prox_q": null }
+          "Esperar que ele peça,\nsem se envolver.": { "karma": 0, "prox_q": null }
         }
       }
     }

@@ -6,8 +6,8 @@ from pathlib import Path
 WIN_ALTURA = 750
 WIN_LARGURA = 1350
 
-KARMA_BOM = 20
-KARMA_RUIM = -20
+KARMA_BOM = 10
+KARMA_RUIM = -10
 
 
 #Inicio Imagens
