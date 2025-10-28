@@ -26,10 +26,10 @@ class JogoDaVida(ctk.CTkToplevel):
         self.canvas.criar_imagem(caminho=var.caminho_bg_img,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags=None,anchor='nw')
     
         #Imagem do balao de pergunta
-        self.canvas.criar_imagem(caminho=var.caminho_balao_perg,tamanho=(1500,400),x=var.WIN_LARGURA/2,y=90,tags=None,anchor='center')
+        self.canvas.criar_imagem(caminho=var.caminho_balao_perg,tamanho=(1360,320),x=640,y=20,tags=None,anchor='center')
 
         #Display do texto da questão
-        self.canvas.create_text(var.WIN_LARGURA/2,55,font=('consolas',20),text='',tags='texto_questao') 
+        self.canvas.create_text(var.WIN_LARGURA/2,70,font=('consolas',21),fill='white',text='',tags='texto_questao') 
 
         #Imagem do botao
         self.botao_img = Image.open(var.caminho_botao_img).resize((760,570))
@@ -82,7 +82,7 @@ class JogoDaVida(ctk.CTkToplevel):
             #cria e posiciona cada imagem e texto do botao e associa cada um a uma tag correspondente
             tag = f'botao{i}'
             self.canvas.create_image(var.WIN_LARGURA/6*mult,630, image=self.botao_photo,tags=tag)
-            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('consolas',15),tags=tag)
+            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('PP Mondwest',20),tags=tag)
 
             #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
             self.canvas.tag_bind(tag, "<Button-1>", lambda e, k=chave[i]: self.clicar_botao(k))
@@ -115,11 +115,11 @@ class JogoDaVida(ctk.CTkToplevel):
         #cria texto e imagens referentes ao karma
         self.canvas.create_text(
             1100, 250, text=text,
-            font=('consolas', 70, 'bold'),
+            font=('PP Mondwest', 70, 'bold'),
             fill="#66DF66" if valor > 0 else "#7A6E6E" if valor == 0 else "#CA2323",
             anchor='center',tags='karma'
         )
-        self.canvas.create_image(1195,250,image=imagem_karma, tags='karma')
+        self.canvas.create_image(1195,243,image=imagem_karma, tags='karma')
 
         # parametros para a animação
         duracao = 1000  # duração total da animação

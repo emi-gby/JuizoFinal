@@ -9,7 +9,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.geometry(f'{var.WIN_LARGURA}x{var.WIN_ALTURA}')
-        self.title('Jogo da Vida')
+        self.title('Juizo Final')
         self.resizable(False,False)
         self.karma = 0
         self.fases_lista = ['faculdade','escola','trabalho','familia']
@@ -34,14 +34,18 @@ class App(ctk.CTk):
         #Edificio- faculdade
         self.canvas.criar_imagem(caminho=var.caminho_faculdade_img,tamanho=(270,280),x=960,y=180,tags="faculdade",anchor='center')
 
-        #Imagem Inicio
+        # TELA INICIAL
+        # background
         self.canvas.criar_imagem(caminho=var.caminho_inicio_bg,tamanho=(var.WIN_LARGURA,var.WIN_ALTURA),x=0,y=0,tags= "inicio_img",anchor='nw')
 
-        #Imagem Play Botao
+        #Play Botao
         self.canvas.criar_imagem(caminho=var.caminho_play_botao,tamanho=(510,190),x=var.WIN_LARGURA/2,y=663,tags="inicio_botao",anchor='center')
 
-        #fim.FinalJogo(self,-40)
- 
+        #Texto 
+        self.canvas.create_text(687,100,text='JUIZO FINAL',fill="#d1c6a2",font=('KNIGHT WARRIOR',110),tags= "inicio_img")
+
+        fim.FinalJogo(self,40)
+
 
     def tela_principal(self):
         '''Destroe a tela inicial do jogo e começa a soundtrack'''

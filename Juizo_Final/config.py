@@ -19,9 +19,11 @@ DADOS_DIR = BASE_DIR / 'dados'
 
 #Importar fontes
 FontManager().load_font(FONTES_DIR /'goth.otf')
+FontManager().load_font(FONTES_DIR /'pixel_fonte.otf')
+FontManager().load_font(FONTES_DIR /'KnightWarrior.otf') 
 
 
-caminho_inicio_bg = IMAGES_DIR /'backgrounds'/'inicio_bg2.jpeg'
+caminho_inicio_bg = IMAGES_DIR /'backgrounds'/'inicio_bg.png'
 
 caminho_play_botao = IMAGES_DIR /'play_botao.png'
 
@@ -36,11 +38,11 @@ caminho_botao_clique_som = SONS_DIR /'botao_clique.wav'
 
 #Icones
 
-caminho_botao_img = IMAGES_DIR /'Botao2.png'
+caminho_botao_img = IMAGES_DIR /'Botao.png'
 
 caminho_balao_perg = IMAGES_DIR /'Balao_pergunta.png'
 
-caminho_karma_img = IMAGES_DIR /'karma3.png'
+caminho_karma_img = IMAGES_DIR /'karma.png'
 
 caminho_anjo_img = IMAGES_DIR /'anjo_icon.png'
 
@@ -68,22 +70,21 @@ def pegar_imagem(background):
         return str(IMAGES_DIR /'backgrounds'/'background_escola.jpg')
 
     elif background == 'familia':
-        return str(IMAGES_DIR /'backgrounds'/'background_familia2.jpeg')
+        return str(IMAGES_DIR /'backgrounds'/'background_familia.jpeg')
 
     elif background == 'faculdade':
-        return str(IMAGES_DIR /'backgrounds'/'background_faculdade2.png')
+        return str(IMAGES_DIR /'backgrounds'/'background_faculdade.png')
 
     else:
-        return str(IMAGES_DIR /'backgrounds'/'background_trabalho5.jpeg')
+        return str(IMAGES_DIR /'backgrounds'/'background_trabalho.jpeg')
 
 #Final Imagens
 caminho_inferno_bg = IMAGES_DIR /'backgrounds'/'inferno.png'
 
-caminho_paraiso_bg = IMAGES_DIR /'backgrounds'/'paraiso4.png'
+caminho_paraiso_bg = IMAGES_DIR /'backgrounds'/'paraiso.png'
 
 caminho_purgatorio_bg = IMAGES_DIR /'backgrounds'/'purgatorio.png'
 
 #Dados Perguntas
-
 with open(DADOS_DIR/'perg_resp.json',encoding='UTF-8') as f:   
     dados = json.load(f) 
