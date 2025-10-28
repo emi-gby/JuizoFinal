@@ -79,16 +79,35 @@ class JogoDaVida(ctk.CTkToplevel):
 
         mult_x_coord = [1,3,5]
         for i, mult in enumerate(mult_x_coord):
-            #cria e posiciona cada imagem e texto do botao e associa cada um a uma tag correspondente
             tag = f'botao{i}'
-            self.canvas.create_image(var.WIN_LARGURA/6*mult,630, image=self.botao_photo,tags=tag)
-            self.canvas.create_text(var.WIN_LARGURA/6*mult,630,text=chave[i],fill='white',font=('PP Mondwest',20),tags=tag)
+            texto_resposta = chave[i]
+
+            x = var.WIN_LARGURA / 6 * mult
+            y = 630
+
+            #Cria a imagem e o texto dos botões (visual)
+            self.canvas.create_image(x,y, image=self.botao_photo,tags=tag)
+            self.canvas.create_text(x,y,text=texto_resposta,fill='white',font=('PP Mondwest',20),tags=tag)
+
+            #Cria um retagulo invisivel da mesma área (hitbox)
+            hitbox_tag = f'{tag}_hitbox'
+            img_largura = 440
+            img_altura = 186
+            self.canvas.create_rectangle(
+                x - img_largura/2,  y - img_altura/2,
+                x + img_largura/2,  y + img_altura/2,
+                tags = (tag, hitbox_tag), outline= '',fill=''
+            )
 
             #Passa o texto corresponde ao botão para a função clicar_botao e cria um evento de clicar para cada botao de acordo com sua tag
-            self.canvas.tag_bind(tag, "<Button-1>", lambda e, k=chave[i]: self.clicar_botao(k))
-            
+            self.canvas.tag_bind(hitbox_tag, "<Button-1>", lambda e, k=texto_resposta: self.clicar_botao(k))
 
-            
+        #coloca a hitbox acima de todos os items
+        for i in range(3):
+            hitbox_id = f'botao{i}_hitbox'
+            self.canvas.tag_raise(hitbox_id)
+
+
     def clicar_botao(self,chave):
         '''Disabilita os botões e define um tempo de espera para a próxima questão'''
 
@@ -96,7 +115,8 @@ class JogoDaVida(ctk.CTkToplevel):
         mixer.Sound(var.caminho_botao_clique_som).play()
 
         for i in range(3):
-            self.canvas.tag_unbind(f'botao{i}', "<Button-1>")
+            hitbox_tag = f'botao{i}_hitbox'
+            self.canvas.tag_unbind(f'botao{i}_hitbox', "<Button-1>")
 
         # mostrar karma na tela
         self.mostrar_karma(self.dados_questao['respostas'][chave]['karma'])

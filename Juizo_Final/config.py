@@ -18,50 +18,50 @@ FONTES_DIR = BASE_DIR / 'fontes'
 DADOS_DIR = BASE_DIR / 'dados'
 
 #Importar fontes
-FontManager().load_font(FONTES_DIR /'goth.otf')
-FontManager().load_font(FONTES_DIR /'pixel_fonte.otf')
-FontManager().load_font(FONTES_DIR /'KnightWarrior.otf') 
+FontManager().load_font(str(FONTES_DIR /'goth.otf'))
+FontManager().load_font(str(FONTES_DIR /'pixel_fonte.otf'))
+FontManager().load_font(str(FONTES_DIR /'KnightWarrior.otf')) 
 
 
-caminho_inicio_bg = IMAGES_DIR /'backgrounds'/'inicio_bg.png'
+caminho_inicio_bg = str(IMAGES_DIR /'backgrounds'/'inicio_bg.png')
 
-caminho_play_botao = IMAGES_DIR /'play_botao.png'
+caminho_play_botao = str(IMAGES_DIR /'play_botao.png')
 
 #Sons
-caminho_soundtrack = SONS_DIR /'soundtrack.ogg'
+caminho_soundtrack = str(SONS_DIR /'soundtrack.ogg')
 
-caminho_maquina_escrever_som = SONS_DIR /'maquina_de_escrever.wav'
+caminho_maquina_escrever_som = str(SONS_DIR /'maquina_de_escrever.wav')
 
-caminho_botao_start_som = SONS_DIR /'botao_start.wav'
+caminho_botao_start_som = str(SONS_DIR /'botao_start.wav')
 
-caminho_botao_clique_som = SONS_DIR /'botao_clique.wav'
+caminho_botao_clique_som = str(SONS_DIR /'botao_clique.wav')
 
 #Icones
 
-caminho_botao_img = IMAGES_DIR /'Botao.png'
+caminho_botao_img = str(IMAGES_DIR /'Botao.png')
 
-caminho_balao_perg = IMAGES_DIR /'Balao_pergunta.png'
+caminho_balao_perg = str(IMAGES_DIR /'Balao_pergunta.png')
 
-caminho_karma_img = IMAGES_DIR /'karma.png'
+caminho_karma_img = str(IMAGES_DIR /'karma.png')
 
-caminho_anjo_img = IMAGES_DIR /'anjo_icon.png'
+caminho_anjo_img = str(IMAGES_DIR /'anjo_icon.png')
 
-caminho_demonio_img = IMAGES_DIR /'demonio_icon.png'
+caminho_demonio_img = str(IMAGES_DIR /'demonio_icon.png')
 
 #Tela principal
 
-caminho_main_img = IMAGES_DIR /'backgrounds'/'main_background3.jpeg'
+caminho_main_img = str(IMAGES_DIR /'backgrounds'/'main_background3.jpeg')
 
 
 #Cenarios Imagens
 
-caminho_trabalho_img = IMAGES_DIR /'edificios'/'trabalho.png'
+caminho_trabalho_img = str(IMAGES_DIR /'edificios'/'trabalho.png')
 
-caminho_escola_img = IMAGES_DIR /'edificios'/'escola.png'
+caminho_escola_img = str(IMAGES_DIR /'edificios'/'escola.png')
 
-caminho_familia_img = IMAGES_DIR /'edificios'/'familia.png'
+caminho_familia_img = str(IMAGES_DIR /'edificios'/'familia.png')
 
-caminho_faculdade_img = IMAGES_DIR /'edificios'/'faculdade.png'
+caminho_faculdade_img = str(IMAGES_DIR /'edificios'/'faculdade.png')
 
 
 def pegar_imagem(background):
@@ -79,12 +79,12 @@ def pegar_imagem(background):
         return str(IMAGES_DIR /'backgrounds'/'background_trabalho.jpeg')
 
 #Final Imagens
-caminho_inferno_bg = IMAGES_DIR /'backgrounds'/'inferno.png'
+caminho_inferno_bg = str(IMAGES_DIR /'backgrounds'/'inferno.png')
 
-caminho_paraiso_bg = IMAGES_DIR /'backgrounds'/'paraiso.png'
+caminho_paraiso_bg = str(IMAGES_DIR /'backgrounds'/'paraiso.png')
 
-caminho_purgatorio_bg = IMAGES_DIR /'backgrounds'/'purgatorio.png'
+caminho_purgatorio_bg = str(IMAGES_DIR /'backgrounds'/'purgatorio.png')
 
 #Dados Perguntas
-with open(DADOS_DIR/'perg_resp.json',encoding='UTF-8') as f:   
+with open(str(DADOS_DIR/'perg_resp.json'),encoding='UTF-8') as f:   
     dados = json.load(f) 

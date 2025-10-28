@@ -16,7 +16,7 @@ class FinalJogo(ctk.CTkToplevel):
         #Som do texto sendo escrito
         mixer.init()
         self.escrever_som = mixer.Sound(var.caminho_maquina_escrever_som)
-        self.escrever_som.set_volume(0.6)
+        self.escrever_som.set_volume(0.6)  
 
         #Cria canvas 
         self.canvas = Canvas(self)
@@ -37,11 +37,11 @@ class FinalJogo(ctk.CTkToplevel):
     def juizo_final(self):
         '''Define o background a partir do karma, chama a função do efeito ao escrever e inicializa o som do efeito'''
         self.escrever_som.play(loops=-1)
-        if self.karma >= var.KARMA_BOM:
+        if self.karma <= var.KARMA_RUIM:
             self.canvas.itemconfig('bg',image=self.canvas.final_photos_dict['inferno'])
             self.efeito_escrever(self.frase_final['inferno'])
 
-        elif self.karma <= var.KARMA_RUIM:
+        elif self.karma >= var.KARMA_BOM:
             self.canvas.itemconfig('bg',image=self.canvas.final_photos_dict['paraiso'])
             self.efeito_escrever(self.frase_final['paraiso'])
         else:

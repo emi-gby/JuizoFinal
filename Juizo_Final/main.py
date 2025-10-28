@@ -44,19 +44,17 @@ class App(ctk.CTk):
         #Texto 
         self.canvas.create_text(687,100,text='JUIZO FINAL',fill="#d1c6a2",font=('KNIGHT WARRIOR',110),tags= "inicio_img")
 
-        fim.FinalJogo(self,40)
-
 
     def tela_principal(self):
         '''Destroe a tela inicial do jogo e começa a soundtrack'''
         self.canvas.delete('inicio_img','inicio_botao')
         #som clique botao start
         start_som = mixer.Sound(var.caminho_botao_start_som).play()
-        start_som.set_volume(0.7)
+        start_som.set_volume(0.2) 
 
         #soundtrack
         mixer.music.load(var.caminho_soundtrack)
-        mixer.music.set_volume(0.2)
+        mixer.music.set_volume(0.2)   
         mixer.music.play(loops=-1)
 
 
